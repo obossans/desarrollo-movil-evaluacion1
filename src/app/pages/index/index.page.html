@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center">
+        <ion-button fill="clear" (click)="goToAgregar()">Agregar Tarea</ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center">
+        <ion-button fill="clear" (click)="goToListar()">Listar Tareas</ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center">
+        <ion-button fill="clear">Editar Tarea</ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-text-center">
+        <ion-button fill="clear">Detalles de Tarea</ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+  </ion-grid>
+</ion-content>

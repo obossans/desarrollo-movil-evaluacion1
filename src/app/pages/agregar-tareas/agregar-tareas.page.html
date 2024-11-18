@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="11" class="ion-text-center">
+        <br>
+        <h3 class="pd-2">Instrucciones: Se debe ingresar el nombre de la tarea y la descripcion para luego presionar
+          sobre el boton "Agregar" lo cual ingresara los datos al arreglo</h3>
+        <br><br>
+        <ion-input required="true" errorText="Ingrese Nombre de la tarea" [(ngModel)]="nombreTarea" label="Nombre Tarea"
+          label-placement="floating" fill="outline" placeholder="Ingresar Nombre Tarea" maxlength="20"
+          counter="true"></ion-input>
+        <br>
+        <ion-input required="true" errorText="Ingrese Descripción de la tarea" [(ngModel)]="descripcionTarea"
+          label="Descripción Tarea" label-placement="floating" fill="outline" placeholder="Ingresar Descripción Tarea"
+          maxlength="50" counter="true"></ion-input>
+        <br>
+        <ion-button (click)="agregarTarea()" shape="round" expand="block"><ion-icon
+            name="add-circle-outline"></ion-icon>&nbsp;Agregar</ion-button>
+        <br>
+      </ion-col>
+    </ion-row><ion-button fill="clear" (click)="goToIndex()">
+      < Ir al Inicio</ion-button>
+  </ion-grid>
+</ion-content>

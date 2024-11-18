@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listado de Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item [color]="i % 2 === 0 ? 'secondary' : 'tertiary'" *ngFor="let tareas of tareas; let i = index">
+          <ion-label>{{tareas.nombre}}</ion-label>
+          <ion-label>{{tareas.descripcion}}</ion-label>
+          <ion-button color="danger" slot="end" (click)="eliminarTarea(i)" expand="block" shape="round">
+            <ion-icon name="close-circle-outline"></ion-icon>&nbsp; Eliminar
+          </ion-button>
+          
+        </ion-item>
+  
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-button fill="clear" (click)="goToIndex()">< Ir a Inicio</ion-button>
+  <br><br>
+</ion-content>
