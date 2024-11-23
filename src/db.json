@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Configurar entorno de desarrollo",
+      "description": "Instalar dependencias y configurar el proyecto inicial."
+    },
+    {
+      "id": 2,
+      "title": "Diseñar la interfaz principal",
+      "description": "Crear los wireframes de las vistas principales."
+    },
+    {
+      "id": 3,
+      "title": "Implementar autenticación",
+      "description": "Agregar funcionalidad para registro y login de usuarios."
+    },
+    {
+      "id": 4,
+      "title": "Configurar base de datos",
+      "description": "Definir esquemas y migraciones para las tablas necesarias."
+    },
+    {
+      "id": 5,
+      "title": "Escribir pruebas unitarias",
+      "description": "Asegurar la funcionalidad del módulo de usuarios."
+    }
+  ]

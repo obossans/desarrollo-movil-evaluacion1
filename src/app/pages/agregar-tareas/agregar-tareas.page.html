@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Capturar foto -->
+     <ion-grid [fixed]="true">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="11" class="ion-text-center">
+        <br>
+        <h3 class="pd-2">Instrucciones: Se debe ingresar el nombre de la tarea y la descripcion para luego presionar
+          sobre el boton "Agregar" lo cual ingresara los datos al arreglo</h3>
+        <br><br>
+        <form #agregarForm="ngForm">
+        <ion-input [(ngModel)]="nombreTarea" name="nombreTarea" label="Nombre Tarea"
+          label-placement="floating" fill="outline" placeholder="Ingresar Nombre Tarea" minlength="5" maxlength="20"
+          counter="true" required></ion-input>
+          <ion-text color="danger" *ngIf="agregarForm.controls['nombreTarea']?.invalid && agregarForm.controls['nombreTarea']?.touched">
+            <small *ngIf="agregarForm.controls['nombreTarea']?.hasError('required')">*El nombre es obligatorio</small>
+            <small *ngIf="agregarForm.controls['nombreTarea']?.hasError('minlength')">*El tamaño minimo es de 5 caracteres</small>
+          </ion-text>
+        <br>
+        <ion-input [(ngModel)]="descripcionTarea" name="descripcionTarea" label="Descripción Tarea" 
+        label-placement="floating" fill="outline" placeholder="Ingresar Descripción Tarea" minlength="5"
+          maxlength="50" counter="true" required></ion-input>
+          <ion-text color="danger" *ngIf="agregarForm.controls['descripcionTarea']?.invalid && agregarForm.controls['descripcionTarea']?.touched">
+            <small *ngIf="agregarForm.controls['descripcionTarea']?.hasError('required')">*El nombre es obligatorio</small>
+            <small *ngIf="agregarForm.controls['descripcionTarea']?.hasError('minlength')">*El tamaño minimo es de 5 caracteres</small>
+          </ion-text>
+          <ion-button expand="block" (click)="capturePhoto()">Tomar Foto</ion-button><br>
+          <ion-card *ngIf="photo">
+            <ion-thumbnail> 
+              <img [src]="photo">
+            </ion-thumbnail>
+           </ion-card>
+           <ion-button expand="block" (click)="captureAddress()">Obtener Ubicacion</ion-button><br>
+           <ion-card *ngIf="location">
+            <ion-card-header>
+              <ion-card-title>Ubicacion</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Latitud: {{ location.latitude }}</p>
+              <p>Longitud: {{ location.longitude }}</p>
+              <p>Direccion: {{address}}</p>
+            </ion-card-content>
+           </ion-card>
+        
+          
+          
+        <br>
+        <ion-button [disabled]="agregarForm.invalid" (click)="agregarTarea()" shape="round" expand="block"><ion-icon
+            name="add-circle-outline"></ion-icon>&nbsp;Agregar</ion-button>
+        <br>
+      </form>
+      </ion-col>
+    </ion-row><ion-button fill="clear" (click)="goToIndex()">
+      < Ir al Inicio</ion-button>
+  </ion-grid>
+</ion-content>

@@ -35,3 +35,18 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-title.title-large {
+    color: #226fb7;
+    font-size: 50px;
+  }
+  
+  ion-title {
+    --color: #ffffff;
+  }
+  
+  ion-toolbar {
+    --background: #226fb7;
+  }
+
+  
